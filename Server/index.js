@@ -11,7 +11,7 @@ app.use(morgan('dev'));
 app.use(express.json()); //traductor a Json por medio de express, conocido como 'bodyParser'
 
 //rutas de nuestro servidor : Routes
-app.use(require('./routes/cars.routes'));
+app.use('/api/cars', require('./routes/cars.routes'));
 
 
 //Inicio del servidor : Starting the Server
