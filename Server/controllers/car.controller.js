@@ -1,34 +1,37 @@
-const carController = {};
+const car = require("../models/car");
 
-carController.getCars = (req, res) => {
-    res.json({
-        status: 'Aqui irán los autos'
-    });
+
+const carCtrl = {};
+
+carCtrl.getCars = async(req, res) => {
+    const cars = await car.find()
+
+    res.json(cars);
 }
 
 
-carController.createCar = function() {
+carCtrl.createCar = function() {
 
 }
 
 
-carController.getCarById = (req, res) => {
+carCtrl.getCarById = (req, res) => {
     res.json({
         status: 'Aqui se van a buscar autos por Id'
     });
 }
 
-carController.updateCar = (req, res) => {
+carCtrl.updateCar = (req, res) => {
     res.json({
         status: 'Aqui se van a actualizar autos por Id'
     });
 }
 
-carController.deleteCar = (req, res) => {
+carCtrl.deleteCar = (req, res) => {
     res.json({
         status: 'Aqui se van a Eliminar autos por Id'
     });
 }
 
 
-module.exports = carController;
+module.exports = carCtrl;
