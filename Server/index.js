@@ -5,7 +5,7 @@ const app = express();
 const { mongoose } = require('./database');
 
 // configuraciones de servidores : Settings
-app.set('port', process.env.PORT || 3000); //configuracion de servidor.
+app.set('port', process.env.PORT || 4000); //configuracion de servidor.
 // funciones para procesar datos : Middlewares
 app.use(morgan('dev'));
 app.use(express.json()); //traductor a Json por medio de express, conocido como 'bodyParser'
