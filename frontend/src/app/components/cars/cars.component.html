@@ -4,13 +4,70 @@
             <div class="card">
                 <div class="card-content">
                     <form #carForm="ngForm" (ngSubmit)="addCar(carForm)">
-
+                        <div align="center">
+                            <label>Ingresa un nuevo auto</label>
+                        </div>
+                        <input type="hidden" name="_id" #name="ngModel" [(ngModel)]="carService.selectedCar._id">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input type="text" name="marca" #name="ngModel" [(ngModel)]="carService.selectedCar.marca" placeholder="Ingresa marca">
+                            </div>
+                            <div class="input-field col s12">
+                                <input type="text" name="anio" #name="ngModel" [(ngModel)]="carService.selectedCar.anio" placeholder="Ingresa año del auto">
+                            </div>
+                            <div class="input-field col s12">
+                                <input type="text" name="modelo" #name="ngModel" [(ngModel)]="carService.selectedCar.modelo" placeholder="Ingresa modelo del auto">
+                            </div>
+                            <div class="input-field col s12">
+                                <input type="text" name="propietario" #name="ngModel" [(ngModel)]="carService.selectedCar.propietario" placeholder="Ingresa el propietario">
+                            </div>
+                            <div class="input-field col s12">
+                                <input type="text" name="estado" #name="ngModel" [(ngModel)]="carService.selectedCar.estado" placeholder="¿esta dentro del vehiculo?">
+                            </div>
+                            <div class="input-field col s12">
+                                <input type="text" name="deuda" #name="ngModel" [(ngModel)]="carService.selectedCar.deuda" placeholder="Ingresa valor a cobrar">
+                            </div>
+                            <div class="card-action">
+                                <div class="input-field col s12">
+                                    <button class="btn right" style="margin-left: 2px;">Ingresar</button>
+                                    <button class="btn right" (click)="resetForm(carForm)">Nuevo Auto</button>
+                                </div>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
         <div class="col s7">
+            <table>
+                <thead>
+                    <th>Marca</th>
+                    <th>Anio</th>
+                    <th>Modelo</th>
+                    <th>Propietario</th>
+                    <th>Estado</th>
+                    <th>Deuda</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor=" let car of carService.cars">
+                        <td>{{ car.marca }}</td>
+                        <td>{{ car.anio }}</td>
+                        <td>{{ car.modelo }}</td>
+                        <td>{{ car.propietario }}</td>
+                        <td>{{ car.estado }}</td>
+                        <td>{{ car.deuda }}</td>
+                        <td>
+                            <a (click)="editCar(car)">
+                                <i class="material-icons">edit</i>
+                            </a>
+                            <a (click)="deleteCar(car._id)">
+                                <i class="material-icons">delete</i>
+                            </a>
+                        </td>
+                    </tr>
 
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

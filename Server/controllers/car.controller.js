@@ -9,7 +9,14 @@ carCtrl.getCars = async(req, res) => {
 }
 
 carCtrl.createCar = async(req, res) => {
-    const carr = new car(req.body);
+    const carr = new car({
+        marca: req.body.marca,
+        anio: req.body.anio,
+        modelo: req.body.modelo,
+        propietario: req.body.propietario,
+        estado: req.body.estado,
+        deuda: req.body.deuda
+    });
     await carr.save();
     res.json({ 'status': 'Auto ingresado.' });
 }
@@ -21,15 +28,7 @@ carCtrl.getCarById = async(req, res) => {
 
 carCtrl.updateCar = async(req, res) => {
     const { id } = req.params;
-    const carr = {
-        marca: req.body.marca,
-        anio: req.body.anio,
-        modelo: req.body.modelo,
-        propietario: req.body.propietario,
-        estado: req.body.estado,
-        deuda: req.body.deuda
-    }
-    await car.findByIdAndUpdate(id, { $set: carr }, { new: true });
+    await car.findByIdAndUpdate(id, { $set: req.body }, { new: true });
     res.json({ status: 'Auto modificado' });
     //res.json({ status: 'Auto modificado' }, car.findById(req.params.id));
 }
