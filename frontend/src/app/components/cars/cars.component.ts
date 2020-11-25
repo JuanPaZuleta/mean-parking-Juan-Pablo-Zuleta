@@ -34,7 +34,7 @@ export class CarsComponent implements OnInit {
       .subscribe((res) => {
         this.resetForm(form);
         M.toast({html: 'Auto ingresado'});//Toast para mensajes en pantalla.
-        this.getCars();
+        this.getCars(); 
       });
     }
     
