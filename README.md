@@ -1,6 +1,8 @@
 # mean-parking
 Este es mi portafolio en el cual hice un desarrollo basado en el Stack MEAN, a continuación una breve descripción por si descargas el repositorio.
 
+Este es un proyecto basado en a administracion de un estacionamiento, se be ingresar los datos relevantes de cada auto que ingresa en el por ejemplo la marca de auto, el modelo, el año, el propietario, entre otros.
+
 Ejecucion del proyecto
 Primera parte:
 Para ejecutar de manera efectiva el proyecto debes tener correctamente instalado MongoDB, Node.js, express.js y Angular, uns vez cuentas con ellos
