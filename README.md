@@ -1,5 +1,5 @@
 # mean-parking
-Este es mi portafolio en el cual hice un desarrollo basado en el Stack MEAN, si descargas el repositorio.
+Este es mi portafolio en el cual hice un desarrollo basado en el Stack MEAN, a continuación una breve descripción por si descargas el repositorio.
 
 Ejecucion del proyecto
 Primera parte:
