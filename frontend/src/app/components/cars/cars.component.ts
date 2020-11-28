@@ -24,17 +24,19 @@ export class CarsComponent implements OnInit {
   addCar(form: NgForm) {
     if(form.value._id){
       this.carService.putCar(form.value)
-      .subscribe((res) =>{
+      .subscribe(res =>{
         this.resetForm(form);
         M.toast({html: 'Auto actualizado'});//Toast para mensajes en pantalla.
         this.getCars();
+        console.log(res);
       })
     } else { 
       this.carService.postCar(form.value)
-      .subscribe((res) => {
+      .subscribe(res => {
         this.resetForm(form);
         M.toast({html: 'Auto ingresado'});//Toast para mensajes en pantalla.
         this.getCars(); 
+        console.log(res);
       });
     }
     
