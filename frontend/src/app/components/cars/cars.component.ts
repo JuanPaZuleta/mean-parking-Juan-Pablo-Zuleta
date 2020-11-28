@@ -13,7 +13,7 @@ declare var M: any;//variable para declarar un toast desde Materialize.com
 })
 export class CarsComponent implements OnInit {
 
-  constructor(private carService: CarService) {
+  constructor(public carService: CarService) {
     
   }
 
@@ -26,7 +26,7 @@ export class CarsComponent implements OnInit {
       this.carService.putCar(form.value)
       .subscribe((res) =>{
         this.resetForm(form);
-        //M.toast({html: 'Auto actualizado'});//Toast para mensajes en pantalla.
+        M.toast({html: 'Auto actualizado'});//Toast para mensajes en pantalla.
         this.getCars();
       })
     } else { 
